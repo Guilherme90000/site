@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres e idioma -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da aba do navegador -->
+    <title>Cadastro do Aluno - SENAI</title>
+     <style>
+        /* ---------- ESTILOS GERAIS DA PÁGINA ---------- */
+        /* Define o fundo azul e centraliza o conteúdo na tela */
+        body {
+            background-color: #0000cc; /* Azul forte de fundo */
+            display: flex; /* Ativa o modo flexbox */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Ocupa 100% da altura da tela */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+            margin: 0; /* Remove margens externas padrão */
+        }
+        /* ---------- CAIXA BRANCA (FORMULÁRIO) ---------- */
+        .form-container {
+            background-color: #fff; /* Cor de fundo branca */
+            padding: 30px 40px; /* Espaçamento interno */
+            border-radius: 10px; /* Deixa os cantos arredondados */
+            border: 2px solid #000; /* Adiciona uma borda preta */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Cria uma sombra leve */
+            width: 320px; /* Define a largura da caixa */
+            text-align: center; /* Centraliza o conteúdo de texto */
+        }
+        /* ---------- TÍTULO DO FORMULÁRIO ---------- */
+        .form-container h2 {
+            color: #004080; /* Azul escuro */
+            margin-bottom: 20px; /* Espaçamento abaixo do título */
+        }
+        /* ---------- RÓTULOS (LABELS) DOS CAMPOS ---------- */
+        label {
+            display: block; /* Faz o label ocupar a linha toda */
+            text-align: left; /* Alinha o texto à esquerda */
+            margin-top: 10px; /* Espaço acima de cada rótulo */
+            font-weight: bold; /* Deixa o texto em negrito */
+            color: #040000; /* Cinza escuro */
+        }
+        /* ---------- CAMPOS DE TEXTO, SELEÇÃO E ÁREA DE TEXTO ---------- */
+        input, select, textarea {
+            width: 100%; /* Faz o campo ocupar toda a largura */
+            padding: 8px; /* Espaçamento interno */
+            margin-top: 5px; /* Espaçamento acima */
+            border: 1px solid #060000d4; /* Cor da borda (cinza escuro) */
+            border-radius: 5px; /* Cantos arredondados */
+            font-size: 12px; /* Tamanho da fonte menor */
+        }
+        /* Impede que a área de texto seja redimensionada manualmente */
+        textarea {
+            resize: none;
+        }
+        /* ---------- BOTÕES ---------- */
+        .button-group {
+            display: flex; /* Coloca os botões lado a lado */
+            justify-content: space-between; /* Espaço igual entre eles */
+            gap: 10px; /* Espaçamento entre os botões */
+            margin-top: 20px; /* Espaçamento acima dos botões */
+        }
+        /* Estilo padrão dos botões */
+        button {
+            background-color: #004080; /* Azul escuro */
+            color: white; /* Texto branco */
+            border: none; /* Remove a borda padrão */
+            padding: 10px; /* Espaçamento interno */
+            border-radius: 5px; /* Cantos arredondados */
+            font-size: 14px; /* Tamanho do texto */
+            cursor: pointer; /* Mostra o cursor de clique */
+            flex: 1; /* Faz cada botão ocupar o mesmo espaço */
+            min-width: 100px; /* Largura mínima para os botões */
+        }
+        /* Muda a cor do botão ao passar o mouse */
+        button:hover {
+            background-color: #002b66; /* Azul mais escuro */
+        }
+        /* ---------- RESPONSIVIDADE, Quando a tela for menor que 400px (celulares pequenos) */
+        @media (max-width: 400px) {
+            .form-container {
+                width: 90%; /* Diminui a largura para caber melhor */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ---------- INÍCIO DO FORMULÁRIO ---------- -->
+    <div class="form-container">
+        <!-- Título principal -->
+        <h2>Cadastro do Aluno</h2>
+
+        <!-- Início do formulário -->
+        <form>
+            <!-- Campo Nome completo -->
+            <label for="nome" style="text-align:center">Nome completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            <!-- Campo E-mail -->
+            <label for="email" style="text-align:center">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <!-- Campo Telefone -->
+            <label for="telefone" style="text-align:center">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
+            <!-- Campo Data de nascimento -->
+            <label for="data-nascimento" style="text-align:center">Data de nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+            <!-- Campo Curso desejado -->
+            <label for="curso" style="text-align:center">Curso desejado:</label>
+            <select id="curso" name="curso" required>
+                <option value="">Selecione</option>
+                <option value="informatica">Técnico em Informática</option>
+                <option value="eletricista">Técnico em Eletricista</option>
+                <option value="mecanica">Técnico em Mecânica</option>
+            </select>
+            <!-- Campo Mensagem adicional -->
+            <label for="mensagem" style="text-align:center">Mensagem adicional:</label>
+            <textarea id="mensagem" name="mensagem" rows="3" placeholder="Digite uma mensagem (opcional)"></textarea>
+            <!-- Grupo de botões -->
+            <div class="button-group">
+                <!-- Botão de enviar -->
+                <button type="submit" formaction="form.html">Enviar Inscrição</button>
+                <br>
+                <br>
+                <!-- Botão de limpar -->
+                <button type="reset">Limpar</button>
+                <br>
+                <br>
+                <a href="https://sge.pe.senai.br/framehtml/web/app/edu/PortalEducacional/login/?redirect=avaliacoes" style="text-align:center">AH! você já é aluno?</a>
+            </div>
+        </form>
+    </body>
+</html>
